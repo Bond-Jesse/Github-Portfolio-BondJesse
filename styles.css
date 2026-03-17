@@ -14,7 +14,7 @@
   --border:   #2a2a2a;   /* borders */
   --text:     #eeeeee;   /* main text */
   --muted:    #888888;   /* grey text */
-  --accent:   #ff5c00;   /* orange highlight — change this to any color you like */
+  --accent:   rgb(255, 255, 255);   /* orange highlight — change this to any color you like */
 }
 
 /* ---- RESET: clears default browser spacing ---- */
@@ -103,7 +103,7 @@ section h2 {
 .btn {
   display: inline-block;
   background: var(--accent);
-  color: #fff;
+  color: #bd1818;
   font-weight: 600;
   font-size: 0.9rem;
   padding: 0.7rem 1.6rem;
@@ -166,7 +166,7 @@ section h2 {
   margin-bottom: 1rem;
   max-width: 600px;
 }
-#about p strong { color: var(--text); } /* makes bold text white */
+section p strong { color: var(--text); } /* makes bold text white */
 
 /* Skills tags */
 .tags {
@@ -189,7 +189,7 @@ section h2 {
 #games { border-top: 1px solid var(--border); }
 
 /* Grid of game cards — automatically adjusts columns */
-.games-grid {
+.game-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 1rem;
@@ -210,6 +210,7 @@ section h2 {
   transform: translateY(-2px); /* tiny lift on hover */
 }
 
+
 .game-icon { font-size: 2rem; }
 
 .game-body h3 {
@@ -229,15 +230,105 @@ section h2 {
 
 /* "In Progress" badge */
 .wip {
-  font-size: 0.65rem;
+  font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   background: var(--accent);
-  color: #fff;
+  color: #bd1818;
   padding: 0.15rem 0.9rem;
   border-radius: 99px;
 }
+
+/* ---- ORDER BADGE (top right of each card) ---- */
+.project-card {
+  position: relative; /* needed so the badge knows where to sit */
+}
+
+.order-badge {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;        /* makes it a circle */
+  background: var(--accent);
+  color: #bd1818;
+  font-size: 0.7rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+}
+
+/* ---- TOOLTIP (shows on hover) ---- */
+.order-badge .tooltip {
+  display: none;
+  position: absolute;
+  top: 130%;
+  right: 0;
+  background: #222;
+  color: var(--text);
+  font-size: 0.72rem;
+  font-weight: 400;
+  padding: 0.6rem 0.9rem;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  white-space: normal;
+  width: 220px;
+  z-index: 10;
+  line-height: 1.5;
+}
+
+/* Shows on hover OR when clicked */
+.order-badge:hover .tooltip,
+.order-badge.active .tooltip {
+  display: block;
+}
+
+/* The read more button inside the tooltip */
+.tooltip-readmore {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: var(--accent);
+  font-size: 0.7rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 0;
+}
+.tooltip-readmore:hover { text-decoration: underline; }
+
+/* The full info box that appears below the card */
+.card-fullinfo {
+  display: none;
+  margin-top: 0.75rem;
+  padding: 0.75rem;
+  background: #1a1a1a;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-size: 0.82rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.card-fullinfo.open { display: block; }
+.card-fullinfo p + p  { margin-top: 0.5rem; }
+
+/* Close button inside the full info box */
+.close-btn {
+  display: inline-block;
+  margin-top: 0.6rem;
+  color: var(--accent);
+  font-size: 0.7rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+}
+.close-btn:hover { text-decoration: underline; }
 
 /* =============================================
    CONTACT SECTION

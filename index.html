@@ -16,6 +16,7 @@
     <div class="nav-links">
       <a href="#about">About</a>
       <a href="#games">Games</a>
+      <a href="#more">more projects</a>
       <a href="#contact">Contact</a>
     </div>
   </nav>
@@ -35,13 +36,13 @@
   <section id="about">
     <h2>About Me</h2>
     <p>
-      I'm a 16-year-old game developer from Belgium. I started messing around with
+      I'm a 16 year old game developer from Belgium. I started messing around with
       games when I was 8, and by the time I was 14 I decided to take it seriously.
       I build in <strong>Unreal Engine 5</strong> using the Blueprint system,
       and I also know basic <strong>Python</strong>.
     </p>
     <p>
-      I've built 5 games so far — none released yet, but I'm aiming to ship my
+      I've built 5 games so far, none released yet, but I'm aiming to ship my
       first one in the next year or two. Every project teaches me something new.
     </p>
 
@@ -71,6 +72,9 @@
       -->
 
       <div class="game-card">
+        <div class="order-badge">i
+          <span class="tooltip">This was one of my first projects. I started it at age 9 with the help of tutorials.<br>It wasn't the greatest game, but it was a fun introduction to game development.<br>Sadly, I can no longer find the files.</span>
+        </div>
         <div class="game-icon">🧟</div>
         <div class="game-body">
           <h3>Zombie Shooter</h3>
@@ -80,6 +84,10 @@
       </div>
 
       <div class="game-card">
+        <div class="order-badge">i
+          <span class="tooltip">This was a fun project where I really leaned into level design<br>and tried to make something feel alive. I used the basic car sample in UE5 at the time and focused heavily on the layout of the map.<br>Sadly, these files are also lost. (Age 10)
+</span>
+        </div>
         <div class="game-icon">🏎️</div>
         <div class="game-body">
           <h3>Racing Game</h3>
@@ -88,18 +96,10 @@
       </div>
 
 
-
       <div class="game-card">
-        <div class="game-icon">🏃</div>
-        <div class="game-body">
-          <h3>Endless Runner</h3>
-          <p>Classic endless runner. Built to learn basic blueprints and game loops.</p>
+        <div class="order-badge">i
+          <span class="tooltip">I started this game around age 14.<br>For the four years prior I had just been playing around with the engine,<br>but this project was serious and a really important one for me.<br>I learned a lot:<br>UI design, sound effects, game balance, visual effects, and much more.<br>This was definitely the project that made me take game development seriously.</span>
         </div>
-      </div>
-
-
-
-      <div class="game-card">
         <div class="game-icon">💼</div>
         <div class="game-body">
           <h3>Job Runner </h3>
@@ -108,18 +108,74 @@
       </div>
 
 
+      <div class="game-card">
+        <div class="order-badge">i
+          <span class="tooltip">I started this project right after hitting a coding wall in my previous game.<br>I needed to really learn how to code, so I built this from scratch.<br>I was around 14–15 at the time. It was a fun project, but sadly the files got corrupted and couldn't be recovered.</span>
+        </div>
+        <div class="game-icon">🏃</div>
+        <div class="game-body">
+          <h3>Endless Runner</h3>
+          <p>Classic endless runner. Built to learn basic blueprints and game loops.</p>
+        </div>
+      </div>
+
 
       <div class="game-card">
+        <div class="order-badge">i
+          <span class="tooltip">This is my current project, started at 15 right after losing the Endless Runner.<br>For this one I challenged myself to use zero tutorials only my own knowledge and sources like Google, Reddit, and GitHub.<br>I also decided to document the journey, so I created a YouTube channel and have posted one devlog so far, with a second one on the way.<br>I'm still actively working on this.</span>
+        </div>
         <div class="game-icon">📦</div>
         <div class="game-body">
           <h3>Escape the Box <span class="wip">In Progress</span> </h3>
           <p>A puzzle-parkour game where you escape a box. Mix of brain teasers and movement mechanics.</p>
-          <a href="https://www.youtube.com/@DevRush-1" target="_blank" class="btn small">▶ Watch</a>
+          <a href="https://www.youtube.com/@DevRush-1" target="_blank" class="btn small">▶ Watch progress</a>
         </div>
       </div>
 
     </div>
   </section>
+
+
+   <section id="more">
+    <h2>more projects</h2>
+    <p class="section-sub">I didn't only make games I also made <strong>multiple physical</strong> projects.</p>
+  
+
+<div class="game-card">
+  <div class="order-badge">i
+    <span class="tooltip">
+      Built and raced a hydrogen-powered RC car with a classmate.<br>
+      I handled 3D design, body design, electronics, and drove in the race.
+      We finished 7th and won the award for most efficient driving —
+      30 laps on a single hydrogen cell.
+      <br/><br/>
+      <!-- clicking this opens the full info box below the card -->
+      <button class="tooltip-readmore" onclick="openFullInfo('rc-info')">Read More ↓</button>
+    </span>
+  </div>
+
+  <div class="game-icon">🚗</div>
+  <div class="game-body">
+    <h3>H2 RC Grand Prix</h3>
+    <p>Built and raced a hydrogen-powered RC car. Finished 7th and won most efficient driving — 30 laps on one hydrogen cell.</p>
+          <a href="https://www.youtube.com/live/xzpAVZTHd-0?" target="_blank" class="btn small">▶ Watch the race pt1</a>
+          <a href="https://www.youtube.com/live/OE5Fio9vvCQ?" target="_blank" class="btn small">▶ Watch the race pt2</a>  
+
+    <!-- Full info — hidden until Read More is clicked -->
+    <div class="card-fullinfo" id="rc-info">
+      <p>We were provided with basic materials including HydroSticks and had to build a functional vehicle under strict constraints.</p>
+      <p>I took initiative across multiple areas due to limited team leadership coordinating tasks, doing 3D and body design, and handling electronics.</p>
+      <p>One of our key innovations was a custom shock absorption system to protect the CPU during rear impacts. It also helped maintain momentum after collisions.</p>
+      <p>Through this project I developed practical skills in mechanics, leadership, task planning, and team coordination.</p>
+      <button class="close-btn" onclick="closeFullInfo('rc-info')">Close ↑</button>
+    </div>
+
+  </div>
+</div>
+
+
+   </section>
+  
 
   <!-- ========== CONTACT ========== -->
   <section id="contact">
@@ -135,7 +191,7 @@
 
   <!-- ========== FOOTER ========== -->
   <footer>
-    <p>© 2026 Jesse · Made with HTML, CSS</p>
+    <p>© 2026 Jesse · Made with HTML, CSS, JS</p>
   </footer>
 
   <script src="function.JS"></script>

@@ -6,6 +6,7 @@
   <title>Jesse — Game Dev</title>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rubik:wght@300;400;500;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="styles.css"/>
+
 </head>
 <body>
 
@@ -16,7 +17,8 @@
     <div class="nav-links">
       <a href="#about">About</a>
       <a href="#games">Games</a>
-      <a href="#more">more projects</a>
+      <a href="#more">More projects</a>
+      <a href="#school">school</a>
       <a href="#contact">Contact</a>
     </div>
   </nav>
@@ -71,6 +73,8 @@
         ──────────────────────────────────────────────────────
       -->
 
+<!--Zombie Shooter-->
+
       <div class="game-card">
         <div class="order-badge">i
           <span class="tooltip">This was one of my first projects. I started it at age 9 with the help of tutorials.<br>It wasn't the greatest game, but it was a fun introduction to game development.<br>Sadly, I can no longer find the files.</span>
@@ -87,6 +91,10 @@
         <div class="order-badge">i
           <span class="tooltip">This was a fun project where I really leaned into level design<br>and tried to make something feel alive. I used the basic car sample in UE5 at the time and focused heavily on the layout of the map.<br>Sadly, these files are also lost. (Age 10)
 </span>
+
+
+  <!--Racing game-->
+
         </div>
         <div class="game-icon">🏎️</div>
         <div class="game-body">
@@ -94,6 +102,9 @@
           <p>A basic racing game. My first time working with vehicle physics and track design.</p>
         </div>
       </div>
+
+
+      <!--job ruuner-->
 
 
       <div class="game-card">
@@ -108,6 +119,9 @@
       </div>
 
 
+<!--Endless Runner-->
+
+
       <div class="game-card">
         <div class="order-badge">i
           <span class="tooltip">I started this project right after hitting a coding wall in my previous game.<br>I needed to really learn how to code, so I built this from scratch.<br>I was around 14–15 at the time. It was a fun project, but sadly the files got corrupted and couldn't be recovered.</span>
@@ -118,6 +132,9 @@
           <p>Classic endless runner. Built to learn basic blueprints and game loops.</p>
         </div>
       </div>
+
+
+      <!--Escape The Box-->
 
 
       <div class="game-card">
@@ -136,10 +153,16 @@
   </section>
 
 
+
+    <!--more projects-->
+
+
    <section id="more">
     <h2>more projects</h2>
     <p class="section-sub">I didn't only make games I also made <strong>multiple physical</strong> projects.</p>
   
+
+    <!--Hydrogen car-->
 
 <div class="game-card">
   <div class="order-badge">i
@@ -175,7 +198,153 @@
 
 
    </section>
+
+
+   <!--school-->
+
+   <section id = "school">
+
+    <h2>School</h2>
+
+
+    <!--Middle School-->
+
+      <div class="game-card">
+        <div class="order-badge">i
+          <span class="tooltip">My first year i followd STEM and the year that followed I went to STEM sciences</span>
+        </div>
+        <div class="game-icon">💼</div>
+        <div class="game-body">
+          <h3>middle school</h3>
+          <p>1 year of middle school I followd STEM<br>2nd year STEM sciences</p>
+          <a href="#middle-school" class="btn">See My middle school projects ↓</a>
+        </div>
+      </div>
+
+
+
+      <!--High School-->
+
+
+
+      <div class="game-card">
+        <div class="order-badge">i
+          <span class="tooltip">In high school I am currently following technological sciences</span>
+        </div>
+        <div class="game-icon">💼</div>
+        <div class="game-body">
+          <h3>high school</h3>
+          <p>1st and 2nd year of high school - technological sciences</p>
+          <a href="#high-school" class="btn">See My high school projects ↓</a>
+        </div>
+      </div>
+
+
+
+   </section>
+
+
+
+   <!--School Projects-->
   
+
+   <section id = "middle-school">
+    <H2>Middle school projects</H2>
+
+
+  <!--egg crash chalange-->
+
+<div class="game-card">
+  <div class="order-badge">i
+    <span class="tooltip">
+      In my first year of middle school, one of our first projects was the Egg Crash Challenge.<br>
+      This challenge taught us how to protect something fragile during a crash, and how to think outside the box.
+      <br/><br/>
+      <!-- clicking this opens the full info box below the card -->
+      <button class="tooltip-readmore" onclick="openFullInfo('egg-crash-info')">Read More ↓</button>
+    </span>
+  </div>
+
+  <div class="game-icon">🥚</div>
+  <div class="game-body">
+    <h3>egg crash challange</h3>
+    <p>Built an car that could make an egg survive a crash from a ramp</p>
+
+
+    <!-- Full info — hidden until Read More is clicked -->
+    <div class="card-fullinfo" id="egg-crash-info">
+      <p>We were given the objective to build a small wooden car entirely from our own imagination.</p>
+      <p>I decided to surround the car with sponges to help absorb the impact.</p>
+      <p>I also designed a cushioned compartment for the egg, connected only by a few rubber bands.</p>
+      <p>This allowed it to move forwards and backwards, so it wouldn't come to an abrupt stop.</p>
+      <button class="close-btn" onclick="closeFullInfo('egg-crash-info')">Close ↑</button>
+    </div>
+
+  </div>
+</div>
+
+
+
+<!--Bridge wooden sticks-->
+
+
+<div class="game-card">
+  <div class="order-badge">i
+    <span class="tooltip">
+      The bridge we where suposed to build only could be build out of:<br>wooden sticks and tape. for a passing grade it had to hold +- 3kg<br>but to pass confortable is 5kg
+      <br/><br/>
+      <!-- clicking this opens the full info box below the card -->
+      <button class="tooltip-readmore" onclick="openFullInfo('bridge-info')">Read More ↓</button>
+    </span>
+  </div>
+
+  <div class="game-icon">🌉</div>
+  <div class="game-body">
+    <h3>bridge</h3>
+    <p>Build a bridge fully out od small wooden sticks and tape.</p>
+
+
+    <!-- Full info — hidden until Read More is clicked -->
+    <div class="card-fullinfo" id="bridge-info">
+      <p>My class where challanged with building a bridge in a group of 3 students and we got 2 weeks but we could only work 4 hours a week directly on the bridge</p>
+      <p>My class that didn't know much desided to research all differant ways to build a strong bridge and why they are strong</p>
+      <p>After we researched for a week we went for a pretty simple design where all the stick where interlocked and reinforced with tape</p>
+      <p>At the day of the test when we went go get our bridge. My teammate that went to get it tript on something and droped it.</p>
+      <p>The bridge looked fine except a few broken sticks but whe where like it should alright for atleast 3kg</p>
+      <p>It ended up taking 3,50kg and whe got around 60% on that project.</p>
+      <p></p>
+      <button class="close-btn" onclick="closeFullInfo('bridge-info')">Close ↑</button>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+   </section>
+
+
+   <section id = "high-school">
+    <h2>High school projects</h2>
+
+
+
+      <div class="game-card">
+        <div class="order-badge">i
+          <span class="tooltip">I started this game around age 14.<br>For the four years prior I had just been playing around with the engine,<br>but this project was serious and a really important one for me.<br>I learned a lot:<br>UI design, sound effects, game balance, visual effects, and much more.<br>This was definitely the project that made me take game development seriously.</span>
+        </div>
+        <div class="game-icon">💼</div>
+        <div class="game-body">
+          <h3>Work in progress </h3>
+          <p>A Work in progress</p>
+        </div>
+      </div>
+
+
+
+   </section>
 
   <!-- ========== CONTACT ========== -->
   <section id="contact">

@@ -131,6 +131,7 @@ section h2 {
   flex-direction: column;
   justify-content: center;
   padding-top: 80px;          /* so it's not hidden behind the navbar */
+  align-items: flex-start;
 }
 
 .hero-label {
@@ -189,9 +190,9 @@ section p strong { color: var(--text); } /* makes bold text white */
 #games { border-top: 1px solid var(--border); }
 
 /* Grid of game cards — automatically adjusts columns */
-.game-grid {
+.games-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 1rem;
 }
 

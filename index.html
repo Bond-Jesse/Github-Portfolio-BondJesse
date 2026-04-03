@@ -3,15 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Jesse — Game Dev</title>
+  <title>Jesse Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rubik:wght@300;400;500;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="styles.css"/>
-
 </head>
 <body>
 
   <!-- ========== NAVBAR ========== -->
-  <!-- To add a new section: add a link here AND a <section id="yourname"> below -->
   <nav>
     <div class="logo">JESSE</div>
     <div class="nav-links">
@@ -48,13 +46,13 @@
       first one in the next year or two. Every project teaches me something new.
     </p>
 
-    <!-- Skills — add or remove a <span> to update this list -->
     <div class="tags">
       <span>Unreal Engine 5</span>
       <span>Blueprints</span>
       <span>Python</span>
       <span>Game Design</span>
       <span>Level Design</span>
+      <span>basic elecktronics</span>
     </div>
   </section>
 
@@ -65,16 +63,7 @@
 
     <div class="games-grid">
 
-      <!--
-        ── HOW TO ADD A NEW GAME ──────────────────────────────
-        Copy one <div class="game-card"> block below,
-        paste it at the end of the grid, and fill in your info.
-        To add a play/download button, uncomment the <a> tag.
-        ──────────────────────────────────────────────────────
-      -->
-
-<!--Zombie Shooter-->
-
+      <!--Zombie Shooter-->
       <div class="game-card">
         <div class="order-badge">i
           <span class="tooltip">This was one of my first projects. I started it at age 9 with the help of tutorials.<br>It wasn't the greatest game, but it was a fun introduction to game development.<br>Sadly, I can no longer find the files.</span>
@@ -83,18 +72,13 @@
         <div class="game-body">
           <h3>Zombie Shooter</h3>
           <p>Fight off waves of zombies. Built to practice combat mechanics and enemy AI in UE5.</p>
-          <!-- <a href="#" class="btn small">Play</a> -->
         </div>
       </div>
 
+      <!--Racing game-->
       <div class="game-card">
         <div class="order-badge">i
-          <span class="tooltip">This was a fun project where I really leaned into level design<br>and tried to make something feel alive. I used the basic car sample in UE5 at the time and focused heavily on the layout of the map.<br>Sadly, these files are also lost. (Age 10)
-</span>
-
-
-  <!--Racing game-->
-
+          <span class="tooltip">This was a fun project where I really leaned into level design<br>and tried to make something feel alive. I used the basic car sample in UE5 at the time and focused heavily on the layout of the map.<br>Sadly, these files are also lost. (Age 10)</span>
         </div>
         <div class="game-icon">🏎️</div>
         <div class="game-body">
@@ -103,10 +87,7 @@
         </div>
       </div>
 
-
-      <!--job ruuner-->
-
-
+      <!--job runner-->
       <div class="game-card">
         <div class="order-badge">i
           <span class="tooltip">I started this game around age 14.<br>For the four years prior I had just been playing around with the engine,<br>but this project was serious and a really important one for me.<br>I learned a lot:<br>UI design, sound effects, game balance, visual effects, and much more.<br>This was definitely the project that made me take game development seriously.</span>
@@ -118,10 +99,7 @@
         </div>
       </div>
 
-
-<!--Endless Runner-->
-
-
+      <!--Endless Runner-->
       <div class="game-card">
         <div class="order-badge">i
           <span class="tooltip">I started this project right after hitting a coding wall in my previous game.<br>I needed to really learn how to code, so I built this from scratch.<br>I was around 14–15 at the time. It was a fun project, but sadly the files got corrupted and couldn't be recovered.</span>
@@ -133,10 +111,7 @@
         </div>
       </div>
 
-
       <!--Escape The Box-->
-
-
       <div class="game-card">
         <div class="order-badge">i
           <span class="tooltip">This is my current project, started at 15 right after losing the Endless Runner.<br>For this one I challenged myself to use zero tutorials only my own knowledge and sources like Google, Reddit, and GitHub.<br>I also decided to document the journey, so I created a YouTube channel and have posted one devlog so far, with a second one on the way.<br>I'm still actively working on this.</span>
@@ -145,70 +120,55 @@
         <div class="game-body">
           <h3>Escape the Box <span class="wip">In Progress</span> </h3>
           <p>A puzzle-parkour game where you escape a box. Mix of brain teasers and movement mechanics.</p>
-          <a href="https://www.youtube.com/@DevRush-1" target="_blank" class="btn small">▶ Watch progress</a>
-        </div>
+          <a href="devlog.html" class="btn small">▶ Watch progress</a>
+        </div>  
       </div>
 
     </div>
   </section>
 
-
-
-    <!--more projects-->
-
-
-   <section id="more">
+  <!-- ========== MORE PROJECTS ========== -->
+  <section id="more">
     <h2>more projects</h2>
     <p class="section-sub">I didn't only make games I also made <strong>multiple physical</strong> projects.</p>
-  
 
-    <!--Hydrogen car-->
-
-<div class="game-card">
-  <div class="order-badge">i
-    <span class="tooltip">
-      Built and raced a hydrogen-powered RC car with a classmate.<br>
-      I handled 3D design, body design, electronics, and drove in the race.
-      We finished 7th and won the award for most efficient driving —
-      30 laps on a single hydrogen cell.
-      <br/><br/>
-      <!-- clicking this opens the full info box below the card -->
-      <button class="tooltip-readmore" onclick="openFullInfo('rc-info')">Read More ↓</button>
-    </span>
-  </div>
-
-  <div class="game-icon">🚗</div>
-  <div class="game-body">
-    <h3>H2 RC Grand Prix</h3>
-    <p>Built and raced a hydrogen-powered RC car. Finished 7th and won most efficient driving. 30 laps on one hydrogen cell.</p>
-          <a href="https://www.youtube.com/live/xzpAVZTHd-0?" target="_blank" class="btn small">▶ Watch the race pt1</a>
-          <a href="https://www.youtube.com/live/OE5Fio9vvCQ?" target="_blank" class="btn small">▶ Watch the race pt2</a>  
-
-    <!-- Full info — hidden until Read More is clicked -->
-    <div class="card-fullinfo" id="rc-info">
-      <p>We were provided with basic materials including HydroSticks and had to build a functional vehicle under strict constraints.</p>
-      <p>I took initiative across multiple areas due to limited team leadership coordinating tasks, doing 3D and body design, and handling electronics.</p>
-      <p>One of our key innovations was a custom shock absorption system to protect the CPU during rear impacts. It also helped maintain momentum after collisions.</p>
-      <p>Through this project I developed practical skills in mechanics, leadership, task planning, and team coordination.</p>
-      <button class="close-btn" onclick="closeFullInfo('rc-info')">Close ↑</button>
+    <div class="games-grid">
+      <!-- Hydrogen car -->
+      <div class="game-card">
+        <div class="order-badge">i
+          <span class="tooltip">
+            Built and raced a hydrogen-powered RC car with classmates.<br>
+            I handled 3D design, body design, electronics, and drove in the race.
+            We finished 7th and won the award for most efficient driving —
+            30 laps on a single hydrogen cell.
+            <br/><br/>
+            <button class="tooltip-readmore" onclick="openFullInfo('rc-info')">Read More ↓</button>
+          </span>
+        </div>
+        <div class="game-icon">🚗</div>
+        <div class="game-body">
+          <h3>H2 RC Grand Prix</h3>
+          <p>Built and raced a hydrogen-powered RC car. Finished 7th and won most efficient driving.<br>30 laps on one hydrogen cell.</p>
+          <a href="https://www.youtube.com/live/xzpAVZTHd-0" target="_blank" class="btn small">▶ Watch the race pt1</a>
+          <a href="https://www.youtube.com/live/OE5Fio9vvCQ" target="_blank" class="btn small">▶ Watch the race pt2</a>
+          <div class="card-fullinfo" id="rc-info">
+            <p>We were provided with basic materials including HydroSticks and had to build a functional vehicle under strict constraints.</p>
+            <p>I took initiative across multiple areas due to limited team leadership — coordinating tasks, doing 3D and body design, and handling electronics.</p>
+            <p>One of our key innovations was a custom shock absorption system to protect the CPU during rear impacts. It also helped maintain momentum after collisions.</p>
+            <p>Through this project I developed practical skills in mechanics, leadership, task planning, and team coordination.</p>
+            <button class="close-btn" onclick="closeFullInfo('rc-info')">Close ↑</button>
+          </div>
+        </div>
+      </div>
     </div>
+  </section>
 
-  </div>
-</div>
-
-
-   </section>
-
-
-   <!--school-->
-
-   <section id = "school">
-
+  <!-- ========== SCHOOL ========== -->
+  <section id="school">
     <h2>School</h2>
 
-
-    <!--Middle School-->
-
+    <div class="games-grid">
+      <!--Middle School-->
       <div class="game-card">
         <div class="order-badge">i
           <span class="tooltip">My first year i followd STEM and the year that followed I went to STEM sciences</span>
@@ -217,16 +177,11 @@
         <div class="game-body">
           <h3>middle school</h3>
           <p>1 year of middle school I followd STEM<br>2nd year STEM sciences</p>
-          <a href="#middle-school" class="btn">See My middle school projects ↓</a>
+          <a href="#middle-school" class="btn">See my middle school projects ↓</a>
         </div>
       </div>
 
-
-
       <!--High School-->
-
-
-
       <div class="game-card">
         <div class="order-badge">i
           <span class="tooltip">In high school I am currently following technological sciences</span>
@@ -235,148 +190,114 @@
         <div class="game-body">
           <h3>high school</h3>
           <p>1st and 2nd year of high school - technological sciences</p>
-          <a href="#high-school" class="btn">See My high school projects ↓</a>
+          <a href="#high-school" class="btn">See my high school projects ↓</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== MIDDLE SCHOOL PROJECTS ========== -->
+  <section id="middle-school">
+    <h2>Middle school projects</h2>
+
+    <div class="games-grid">
+      
+      <!--egg crash challenge-->
+      <div class="game-card">
+        <div class="order-badge">i
+          <span class="tooltip">
+            In my first year of middle school, one of our first projects was the Egg Crash Challenge.<br>
+            This challenge taught us how to protect something fragile during a crash, and how to think outside the box.
+            <br/><br/>
+            <button class="tooltip-readmore" onclick="openFullInfo('egg-crash-info')">Read More ↓</button>
+          </span>
+        </div>
+        <div class="game-icon">🥚</div>
+        <div class="game-body">
+          <h3>egg crash challange</h3>
+          <p>Built an car that could make an egg survive a crash from a ramp</p>
+          <div class="card-fullinfo" id="egg-crash-info">
+            <p>We were given the objective to build a small wooden car entirely from our own imagination.</p>
+            <p>I decided to surround the car with sponges to help absorb the impact.</p>
+            <p>I also designed a cushioned compartment for the egg, connected only by a few rubber bands.</p>
+            <p>This allowed it to move forwards and backwards, so it wouldn't come to an abrupt stop.</p>
+            <button class="close-btn" onclick="closeFullInfo('egg-crash-info')">Close ↑</button>
+          </div>
         </div>
       </div>
 
-
-
-   </section>
-
-
-
-   <!--School Projects-->
-  
-
-   <section id = "middle-school">
-    <H2>Middle school projects</H2>
-
-
-  <!--egg crash chalange-->
-
-<div class="game-card">
-  <div class="order-badge">i
-    <span class="tooltip">
-      In my first year of middle school, one of our first projects was the Egg Crash Challenge.<br>
-      This challenge taught us how to protect something fragile during a crash, and how to think outside the box.
-      <br/><br/>
-      <!-- clicking this opens the full info box below the card -->
-      <button class="tooltip-readmore" onclick="openFullInfo('egg-crash-info')">Read More ↓</button>
-    </span>
-  </div>
-
-  <div class="game-icon">🥚</div>
-  <div class="game-body">
-    <h3>egg crash challange</h3>
-    <p>Built an car that could make an egg survive a crash from a ramp</p>
-
-
-    <!-- Full info — hidden until Read More is clicked -->
-    <div class="card-fullinfo" id="egg-crash-info">
-      <p>We were given the objective to build a small wooden car entirely from our own imagination.</p>
-      <p>I decided to surround the car with sponges to help absorb the impact.</p>
-      <p>I also designed a cushioned compartment for the egg, connected only by a few rubber bands.</p>
-      <p>This allowed it to move forwards and backwards, so it wouldn't come to an abrupt stop.</p>
-      <button class="close-btn" onclick="closeFullInfo('egg-crash-info')">Close ↑</button>
-    </div>
-
-  </div>
-</div>
-
-
-
-<!--Bridge wooden sticks-->
-
-
-<div class="game-card">
-  <div class="order-badge">i
-    <span class="tooltip">
-      The bridge we where suposed to build only could be build out of:<br>wooden sticks and tape. for a passing grade it had to hold +- 3kg<br>but to pass confortable is 5kg
-      <br/><br/>
-      <!-- clicking this opens the full info box below the card -->
-      <button class="tooltip-readmore" onclick="openFullInfo('bridge-info')">Read More ↓</button>
-    </span>
-  </div>
-
-  <div class="game-icon">🌉</div>
-  <div class="game-body">
-    <h3>bridge</h3>
-    <p>Build a bridge fully out od small wooden sticks and tape.</p>
-
-
-    <!-- Full info — hidden until Read More is clicked -->
-    <div class="card-fullinfo" id="bridge-info">
-      <p>My class where challanged with building a bridge in a group of 3 students and we got 2 weeks but we could only work 4 hours a week directly on the bridge</p>
-      <p>My class that didn't know much desided to research all differant ways to build a strong bridge and why they are strong</p>
-      <p>After we researched for a week we went for a pretty simple design where all the stick where interlocked and reinforced with tape</p>
-      <p>At the day of the test when we went go get our bridge. My teammate that went to get it tript on something and droped it.</p>
-      <p>The bridge looked fine except a few broken sticks but whe where like it should alright for atleast 3kg</p>
-      <p>It ended up taking 3,50kg and whe got around 60% on that project.</p>
-      <p></p>
-      <button class="close-btn" onclick="closeFullInfo('bridge-info')">Close ↑</button>
-    </div>
-
-  </div>
-</div>
-
-
-<!--Spider-->
-
-
-
-<div class="game-card">
-  <div class="order-badge">i
-    <span class="tooltip">
-      In my second year of middle school, one of our projects was a vibrating spider that when hitting something on the left will move to the right.<br>
-      This project taught us how to 
-      <br/><br/>
-      <!-- clicking this opens the full info box below the card -->
-      <button class="tooltip-readmore" onclick="openFullInfo('egg-crash-info')">Read More ↓</button>
-    </span>
-  </div>
-
-  <div class="game-icon">🥚</div>
-  <div class="game-body">
-    <h3>Spider</h3>
-    <p>Built an car that could make an egg survive a crash from a ramp</p>
-
-
-    <!-- Full info — hidden until Read More is clicked -->
-    <div class="card-fullinfo" id="egg-crash-info">
-      <p>We were given the objective to build a small wooden car entirely from our own imagination.</p>
-      <p>I decided to surround the car with sponges to help absorb the impact.</p>
-      <p>I also designed a cushioned compartment for the egg, connected only by a few rubber bands.</p>
-      <p>This allowed it to move forwards and backwards, so it wouldn't come to an abrupt stop.</p>
-      <button class="close-btn" onclick="closeFullInfo('egg-crash-info')">Close ↑</button>
-    </div>
-
-  </div>
-</div>
-
-
-
-   </section>
-
-
-   <section id = "high-school">
-    <h2>High school projects</h2>
-
-
-
+      <!--Bridge wooden sticks-->
       <div class="game-card">
         <div class="order-badge">i
-          <span class="tooltip">I started this game around age 14.<br>For the four years prior I had just been playing around with the engine,<br>but this project was serious and a really important one for me.<br>I learned a lot:<br>UI design, sound effects, game balance, visual effects, and much more.<br>This was definitely the project that made me take game development seriously.</span>
+          <span class="tooltip">
+            The bridge we where suposed to build only could be build out of:<br>wooden sticks and tape. for a passing grade it had to hold +- 3kg<br>but to pass confortable is 5kg
+            <br/><br/>
+            <button class="tooltip-readmore" onclick="openFullInfo('bridge-info')">Read More ↓</button>
+          </span>
+        </div>
+        <div class="game-icon">🌉</div>
+        <div class="game-body">
+          <h3>bridge</h3>
+          <p>Build a bridge fully out od small wooden sticks and tape.</p>
+          <div class="card-fullinfo" id="bridge-info">
+            <p>My class where challanged with building a bridge in a group of 3 students and we got 2 weeks but we could only work 4 hours a week directly on the bridge</p>
+            <p>My class that didn't know much so we desided to research all differant ways to build a strong bridge and why they are strong</p>
+            <p>After we researched for a week we went for a pretty simple design where all the stick where interlocked and reinforced with tape</p>
+            <p>At the day of the test when we went go get our bridge. My teammate that went to get it tript on something and droped it.</p>
+            <p>The bridge looked fine except a few broken sticks but whe where like it should alright for atleast 3kg</p>
+            <p>It ended up taking 3,50kg and whe got around 60% on that project.</p>
+            <button class="close-btn" onclick="closeFullInfo('bridge-info')">Close ↑</button>
+          </div>
+        </div>
+      </div>
+
+      <!--Spider-->
+      <div class="game-card">
+        <div class="order-badge">i
+          <span class="tooltip">
+            In my second year of middle school, one of our projects was a vibrating spider that when hitting something on the left will move to the right. and vice versa<br>
+            This project taught me how the basic (components) of electricaty work alongside how to asamble these into something funtional. 
+            <br/><br/>
+            <button class="tooltip-readmore" onclick="openFullInfo('spider-info')">Read More ↓</button>
+          </span>
+        </div>
+        <div class="game-icon">🕷️</div>
+        <div class="game-body">
+          <h3>Spider</h3>
+          <p>Built a spider that moves and can rotate</p>
+          <div class="card-fullinfo" id="spider-info">
+            <p>In my second year of middle school, one of our projects was building a vibrating spider robot.</p>
+            <p>The spider used wire feelers acting as whiskers on each side. When a whisker bent on contact with an object, it triggered the spider to turn in the opposite direction. hit on the left, turn right, and vice versa.</p>
+            <p>The electronics consisted of a battery as the power source, a small motor to create the vibration that moved it forward, wires to connect everything together, and buttonstyle switches with long handles that the whiskers would press when bent.</p>
+            <p>This project gave me my first real handson experience with basic electronics understanding how components connect and work together to create something functional.</p>
+            <button class="close-btn" onclick="closeFullInfo('spider-info')">Close ↑</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== HIGH SCHOOL PROJECTS ========== -->
+  <section id="high-school">
+    <h2>High school projects</h2>
+
+    <div class="games-grid">
+      <div class="game-card">
+        <div class="order-badge">i
+          <span class="tooltip">Built and raced a hydrogen-powered RC car with classmates.<br>
+          I handled 3D design, body design, electronics, and drove in the race.
+          We finished 7th and won the award for most efficient driving —
+          30 laps on a single hydrogen cell.</span>
         </div>
         <div class="game-icon">💼</div>
         <div class="game-body">
-          <h3>Work in progress </h3>
-          <p>A Work in progress</p>
+          <h3>Hydro RC car </h3>
+          <p>my second year of high school we had to build a Hydrogen RC car and than race other schools with it.</p>
+          <a href="#more" class="btn">See more</a>
         </div>
       </div>
-
-
-
-   </section>
+    </div>
+  </section>
 
   <!-- ========== CONTACT ========== -->
   <section id="contact">
@@ -384,9 +305,7 @@
     <p>Want to follow my progress, collaborate, or just talk games? Reach out below.</p>
     <div class="contact-links">
       <a href="mailto:bond.10palmboom@gmail.com" class="btn">📧 bond.10palmboom@gmail.com</a>
-      
-        <a href="https://github.com/Bond-Jesse" target="_blank" class="btn outline">🐙 GitHub</a>
-      
+      <a href="https://github.com/Bond-Jesse" target="_blank" class="btn outline">🐙 GitHub</a>
     </div>
   </section>
 

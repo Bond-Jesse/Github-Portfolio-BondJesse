@@ -46,3 +46,12 @@ function closeFullInfo(id) {
   const box = document.getElementById(id);
   box.classList.remove('open');
 }
+
+// ---- Come back when switching tab ----
+
+const originalTitle = document.title;
+document.addEventListener("visibilitychange", () => {
+  document.title = document.hidden ?
+    "Come Back, I miss you :("  :
+    originalTitle;
+});

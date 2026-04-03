@@ -1,0 +1,515 @@
+/* =============================================
+   CSS VARIABLES & BASE STYLES
+   ============================================= */
+:root {
+  --bg:       #0f0f0f;
+  --bg2:      #1a1a1a;
+  --border:   #2a2a2a;
+  --text:     #eeeeee;
+  --muted:    #888888;
+  --accent:   #ff5c00;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Rubik', sans-serif;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+a { text-decoration: none; color: inherit; }
+
+/* =============================================
+   NAVIGATION
+   ============================================= */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  height: 60px;
+  background: rgba(15,15,15,0.92);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(8px);
+}
+
+.logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.5rem;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+}
+
+.nav-links { display: flex; gap: 0.5rem; }
+
+.nav-links a {
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 0.4rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--muted);
+  transition: 0.2s;
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+/* =============================================
+   SHARED COMPONENTS
+   ============================================= */
+
+/* Section Container */
+section {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 5rem 1.5rem;
+}
+
+section h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.8rem;
+  letter-spacing: 0.05em;
+  color: var(--accent);
+  margin-bottom: 1.2rem;
+}
+
+.section-sub {
+  color: var(--muted);
+  margin-bottom: 2rem;
+  font-size: 0.95rem;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  background: var(--accent);
+  color: #bd1818;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.7rem 1.6rem;
+  border-radius: 4px;
+  border: 1px solid var(--accent);
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.btn:hover { opacity: 0.85; transform: translateY(-1px); }
+
+.btn.outline {
+  background: transparent;
+  color: var(--accent);
+}
+
+.btn.outline:hover { background: var(--accent); color: #fff; }
+
+.btn.small { font-size: 0.78rem; padding: 0.4rem 0.9rem; }
+
+/* Tags */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.tags span {
+  font-size: 0.8rem;
+  padding: 0.35rem 0.85rem;
+  border: 1px solid var(--border);
+  border-radius: 99px;
+  color: var(--muted);
+}
+
+/* =============================================
+   HERO SECTION
+   ============================================= */
+#hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 80px;
+  align-items: flex-start;
+}
+
+.hero-label {
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+
+#hero h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(3rem, 10vw, 6rem);
+  line-height: 1;
+  letter-spacing: 0.03em;
+  margin-bottom: 1rem;
+}
+
+.hero-sub {
+  color: var(--muted);
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  max-width: 480px;
+}
+
+/* =============================================
+   ABOUT SECTION
+   ============================================= */
+#about { border-top: 1px solid var(--border); }
+
+#about p {
+  color: var(--muted);
+  margin-bottom: 1rem;
+  max-width: 600px;
+}
+
+section p strong { color: var(--text); }
+
+/* =============================================
+   GAMES SECTION
+   ============================================= */
+#games { border-top: 1px solid var(--border); }
+
+.games-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.game-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: 0.2s;
+}
+
+.game-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.game-icon { font-size: 2rem; }
+
+.game-body h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.game-body p {
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.wip {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  background: var(--accent);
+  color: #bd1818;
+  padding: 0.15rem 0.9rem;
+  border-radius: 99px;
+}
+
+/* =============================================
+   DEVLOG PAGE
+   ============================================= */
+
+/* Header */
+.devlog-header {
+  padding-top: 120px;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid var(--border);
+  max-width: 800px;
+  margin: 0 auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.devlog-header .back-link {
+  font-size: 0.8rem;
+  font-family: 'Rubik', sans-serif;
+  color: var(--muted);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 1.5rem;
+  transition: 0.2s;
+}
+
+.devlog-header .back-link:hover { color: var(--accent); }
+
+.devlog-header h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  letter-spacing: 0.03em;
+  line-height: 1;
+  margin-bottom: 0.75rem;
+}
+
+.devlog-header h1 span { color: var(--accent); }
+
+.devlog-header p {
+  color: var(--muted);
+  max-width: 520px;
+  font-size: 0.95rem;
+}
+
+/* Live Badge */
+.live-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: rgba(255, 92, 0, 0.12);
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  padding: 0.25rem 0.7rem;
+  border-radius: 99px;
+  margin-bottom: 1rem;
+}
+
+.live-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  animation: pulse 1.8s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+/* Stats Row */
+.devlog-stats {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.devlog-stat { display: flex; flex-direction: column; gap: 0.2rem; }
+
+.devlog-stat .label {
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.devlog-stat .value {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.4rem;
+  letter-spacing: 0.05em;
+  color: var(--text);
+}
+
+/* Entries */
+.devlog-entries {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+.devlog-entries h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2rem;
+  letter-spacing: 0.05em;
+  color: var(--accent);
+  margin-bottom: 2rem;
+}
+
+.devlog-entry {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+  background: var(--bg2);
+  transition: 0.2s;
+}
+
+.devlog-entry:hover { border-color: var(--accent); }
+
+.entry-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.25rem;
+  border-bottom: 1px solid var(--border);
+  background: rgba(255,255,255,0.02);
+}
+
+.entry-ep {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+}
+
+.entry-date {
+  font-size: 0.72rem;
+  color: var(--muted);
+  font-family: 'Rubik', sans-serif;
+}
+
+.entry-video {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  background: #000;
+}
+
+.entry-video iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  border: none;
+}
+
+.entry-body { padding: 1.25rem; }
+
+.entry-body h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.entry-body p {
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.entry-body p + p { margin-top: 0.6rem; }
+
+.entry-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 1rem;
+}
+
+.entry-tag {
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  padding: 0.15rem 0.5rem;
+  border-radius: 99px;
+}
+
+/* Upcoming Section */
+.devlog-upcoming {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1.5rem 4rem;
+}
+
+.devlog-upcoming h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2rem;
+  letter-spacing: 0.05em;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+.upcoming-card {
+  border: 1px dashed var(--border);
+  border-radius: 6px;
+  padding: 1.25rem;
+  background: rgba(255,92,0,0.03);
+}
+
+.upcoming-card h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--muted);
+}
+
+.upcoming-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-top: 0.75rem;
+}
+
+.upcoming-list li {
+  font-size: 0.85rem;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.upcoming-list li::before {
+  content: '—';
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* =============================================
+   CONTACT SECTION
+   ============================================= */
+#contact { border-top: 1px solid var(--border); }
+
+#contact p {
+  color: var(--muted);
+  margin-bottom: 1.5rem;
+  max-width: 500px;
+}
+
+.contact-links { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+
+/* =============================================
+   FOOTER
+   ============================================= */
+footer {
+  border-top: 1px solid var(--border);
+  text-align: center;
+  padding: 2rem 1.5rem;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+/* =============================================
+   MOBILE RESPONSIVE
+   ============================================= */
+@media (max-width: 600px) {
+  .nav-links a { font-size: 0.75rem; padding: 0.35rem 0.7rem; }
+  .games-grid { grid-template-columns: 1fr; }
+  .devlog-stats { gap: 1.2rem; }
+}

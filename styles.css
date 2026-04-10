@@ -354,3 +354,41 @@ footer {
   .nav-links a { font-size: 0.75rem; padding: 0.35rem 0.7rem; }
   .games-grid  { grid-template-columns: 1fr; } /* single column on mobile */
 }
+
+
+/* =============================================
+   CURTAIN WIPE TRANSITION
+   A vertical line sweeps across the screen.
+   The swept area reveals the new page.
+   ============================================= */
+
+/* The curtain element — sits on top of everything */
+#curtain {
+  position: fixed;
+  top: 0; left: -100%;  /* starts off-screen to the left */
+  width: 100%;
+  height: 100%;
+  background: var(--accent); /* the color of the sweeping line */
+  z-index: 9999;
+  pointer-events: none; /* can't accidentally click it */
+}
+
+/* Sweeps RIGHT across the screen (covering the page) */
+#curtain.sweep-in {
+  animation: sweepIn 0.5s cubic-bezier(0.77,0,0.18,1) forwards;
+}
+
+/* Sweeps RIGHT again off screen (revealing new page) */
+#curtain.sweep-out {
+  animation: sweepOut 0.5s cubic-bezier(0.77,0,0.18,1) forwards;
+}
+
+@keyframes sweepIn {
+  from { left: -100%; }
+  to   { left: 0%; }    /* covers full screen */
+}
+
+@keyframes sweepOut {
+  from { left: 0%; }
+  to   { left: 100%; }  /* exits off screen to the right */
+}

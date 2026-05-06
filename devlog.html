@@ -53,7 +53,7 @@
     </div>
     <div class="devlog-stat">
       <span class="label">Devlogs Posted</span>
-      <span class="value">2</span>
+      <span class="value">3</span>
     </div>
     <div class="devlog-stat">
       <span class="label">Status</span>
@@ -73,6 +73,7 @@
     <button class="season-btn active" onclick="filterSeason('all', this)">All</button>
     <button class="season-btn" onclick="filterSeason('Ep-1', this)">Ep 1</button>
     <button class="season-btn" onclick="filterSeason('Ep-2', this)">EP 2</button>
+    <button class="season-btn" onclick="filterSeason('Ep-3', this)">EP 3</button>
     <!-- When you start season 2, add this:
     <button class="season-btn" onclick="filterSeason('season-2', this)">Season 2</button>
     -->
@@ -81,17 +82,49 @@
   <h2>All Episodes</h2>
 
 
-    
-    <!--a
-      ── HOW TO ADD A NEW ENTRY ─────────────────────────────
-      1. Copy this entire <article> block
-      2. Paste it ABOVE this one (newest entry goes first)
-      3. Update: episode number, date, YouTube embed URL,
-         title, description text, and tags
-      To get the embed URL from YouTube:
-      Share → Embed → copy the src="..." value
-      ──────────────────────────────────────────────────────
-    -->
+
+        <!-- Devlog 3 -->
+
+    <article class="devlog-entry" data-season="Ep-3">
+
+      <!-- Episode number + date -->
+      <div class="entry-meta">
+        <span class="entry-ep">Episode 03</span>
+        <span class="entry-date">2026</span>
+      </div>
+
+      <!-- YouTube video embed -->
+      <!-- To update: go to YouTube → Share → Embed → copy the src URL -->
+      <div class="entry-video">
+        <iframe
+          src="https://youtu.be/mMlzuJ8HJsE"
+          title="How can adding sounds be so ... difficult?"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <!-- Text description below the video -->
+      <div class="entry-body">
+        <h3>Devlog #3 — sound effects</h3>
+
+        <p>The third devlog for Escape the Box. This episode covers how I gave the player some sounds alongside some other objects like buttons, ...</p>
+
+        <p>One of the main rules I set for myself: no tutorials. Everything had to come from my own thinking, or from written sources like Google, Reddit, and GitHub.</p>
+
+        <!-- Tags — add or remove to show what topics the devlog covers -->
+        <div class="entry-tags">
+          <span class="entry-tag">sounds effects</span>
+          <span class="entry-tag">UE5</span>
+          <span class="entry-tag">system production</span>
+          <span class="entry-tag">No Tutorials</span>
+        </div>
+      </div>
+
+    </article>
+
+
+
+
 
 
     <!-- Devlog 2 -->
@@ -109,7 +142,7 @@
       <div class="entry-video">
         <iframe
           src="https://www.youtube.com/embed/SSkUHn35lZs?si=hI6qvlRAQTDhjT-e"
-          title="16 year old makes the pasword system inn his game. devlog #2"
+          title="I Spent Hours Fixing This… Then It Crashed Devlog #2"
           allowfullscreen>
         </iframe>
       </div>
@@ -182,19 +215,19 @@
   <div class="devlog-upcoming">
     <h2>Coming Next</h2>
     <div class="upcoming-card">
-      <h3>Episode 03 — In Progress</h3>
+      <h3>Episode 04 — In Progress</h3>
       <!-- Update this list with what you plan to cover -->
       <ul class="upcoming-list">
-        <li>adding sounds to the player</li>
-        <li>adding sounds to the environment</li>
-        <li>adding what i call funsies</li>
+        <li>upgrading tempurary levels.</li>
+        <li>adding more fun to the environment</li>
+
       </ul>
     </div>
   </div>
 
   <!-- ========== FOOTER ========== -->
   <footer>
-    <p>© 2026 Jesse · Made with HTML, CSS, JS</p>
+    <p>© 2026 Jesse · Made with HTML, CSS, JS 70% Human 30% AI</p>
   </footer>
   <script src="function.JS"></script>
 </body>

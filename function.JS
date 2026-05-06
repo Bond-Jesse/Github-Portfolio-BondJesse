@@ -113,3 +113,13 @@ document.querySelectorAll('a[href]').forEach(link => {
     });
   }
 });
+
+
+
+// ---- CARD FLIP ----
+// clicking a card toggles the flipped class
+document.querySelectorAll('.flip-card').forEach(card => {
+  card.addEventListener('click', function() {
+    this.classList.toggle('flipped');
+  });
+});

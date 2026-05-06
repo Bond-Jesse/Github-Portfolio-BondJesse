@@ -323,6 +323,90 @@ section p strong { color: var(--text); } /* makes bold text white */
 }
 .close-btn:hover { text-decoration: underline; }
 
+
+
+
+
+/* =============================================
+   CARD FLIP
+   ============================================= */
+
+/* Wrapper that holds both sides */
+.flip-card {
+  perspective: 1000px; /* gives the 3D depth effect */
+  height: 220px;       /* change this if cards need to be taller */
+}
+
+/* The thing that actually rotates */
+.flip-inner {
+  position: relative;
+  width: 100%; height: 100%;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d; /* keeps both sides in 3D space */
+}
+
+/* When clicked, rotate 180 degrees */
+.flip-card.flipped .flip-inner {
+  transform: rotateY(180deg);
+}
+
+/* Shared styles for front and back */
+.flip-front, .flip-back {
+  position: absolute;
+  width: 100%; height: 100%;
+  backface-visibility: hidden; /* hides the side facing away */
+  border-radius: 6px;
+  padding: 1.25rem;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: border-color 0.2s;
+}
+
+/* Front is normal */
+.flip-front { transform: rotateY(0deg); }
+
+/* Back starts rotated so it's hidden */
+.flip-back {
+  transform: rotateY(180deg);
+  border-color: var(--accent); /* orange border on the back */
+  overflow-y: auto;            /* scrollable if text is long */
+  gap: 0.5rem;
+}
+
+.flip-card:hover .flip-front,
+.flip-card:hover .flip-back {
+  border-color: var(--accent);
+}
+
+.flip-back h3 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.flip-back p {
+  font-size: 0.8rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+.flip-back p + p { margin-top: 0.4rem; }
+
+.flip-hint {
+  font-size: 0.65rem;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-top: auto; /* pushes to bottom of card */
+}
+
+
+
+
+
+
 /* =============================================
    CONTACT SECTION
    ============================================= */

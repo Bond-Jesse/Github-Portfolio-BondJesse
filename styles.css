@@ -24,36 +24,18 @@ a { text-decoration: none; color: inherit; }
    NAVBAR
    ============================================= */
 nav {
-  position: fixed; /* sticks to top while scrolling */
+  position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 100;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 0.5rem;
   padding: 0 2rem;
   height: 60px;
   background: rgba(15,15,15,0.92);
   border-bottom: 1px solid var(--border);
-  backdrop-filter: blur(8px); /* frosted glass effect */
+  backdrop-filter: blur(8px);
 }
-
-/* On desktop the lang button lives inside .nav-right,
-   which sits between the logo and the nav links.
-   We push the links to the right with margin-left: auto. */
-.nav-right {
-  order: 3; /* lang + hamburger always on the right */
-}
-
-.nav-links {
-  order: 2;
-  display: flex;
-  gap: 0.5rem;
-  margin-left: auto;
-  margin-right: 0.5rem;
-}
-
-/* Hamburger is always hidden on desktop */
-.hamburger { display: none !important; }
 
 .logo {
   font-family: 'Bebas Neue', sans-serif;
@@ -62,7 +44,10 @@ nav {
   color: var(--accent);
 }
 
-.nav-links { display: flex; gap: 0.5rem; }
+/* Nav links pushed right; nav-right (lang+hamburger) stays last */
+.nav-links { display: flex; gap: 0.5rem; }         /* remove margin-left: auto */
+.nav-right { display: flex; align-items: center; gap: 0.5rem; margin-left: auto; }
+
 
 /* Each nav link is a small button */
 .nav-links a {
@@ -450,36 +435,61 @@ footer {
 }
 
 /* =============================================
-   MOBILE — full responsive overhaul
+   HAMBURGER BUTTON — hidden on desktop
+   ============================================= */
+.hamburger {
+  display: none; /* JS shows it on mobile via style.display */
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 34px;
+  height: 34px;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 6px;
+  flex-shrink: 0;
+}
+.hamburger span {
+  display: block;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+}
+
+/* =============================================
+   MOBILE — all fixes for screens <= 600px
    ============================================= */
 @media (max-width: 600px) {
 
-  /* ---- NAVBAR ---- */
+  /* --- NAVBAR --- */
   nav {
     flex-wrap: wrap;
     height: auto;
     padding: 0.6rem 1rem;
-    gap: 0.5rem;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
+    gap: 0.4rem;
   }
 
-  /* Override the desktop hamburger:none rule */
-  .hamburger { display: flex !important; }
+  /* Right side: hamburger + lang button */
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
 
-  /* nav-right stays on the right beside the logo */
-  .nav-right { order: 2; margin-left: auto; }
+  .hamburger { display: flex; }
 
-  /* Link list drops below logo + nav-right row */
+  /* Link list hidden until hamburger is tapped */
   .nav-links {
     display: none;
     flex-direction: column;
     width: 100%;
     gap: 0.4rem;
-    padding-bottom: 0.5rem;
+    padding-bottom: 0.4rem;
     order: 3;
-    margin-left: 0;
-    margin-right: 0;
   }
   .nav-links.open { display: flex; }
 
@@ -487,7 +497,6 @@ footer {
     font-size: 0.85rem;
     padding: 0.5rem 0.9rem;
     width: 100%;
-    text-align: left;
   }
 
   .lang-btn {
@@ -495,55 +504,30 @@ footer {
     padding: 0.35rem 0.7rem;
   }
 
-  /* Hamburger — only exists on mobile via JS injection */
-  .hamburger {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 5px;
-    width: 34px;
-    height: 34px;
-    background: none;
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    cursor: pointer;
-    padding: 6px;
-    flex-shrink: 0;
-  }
-  .hamburger span {
-    display: block;
-    height: 2px;
-    background: var(--text);
-    border-radius: 2px;
-    transition: 0.2s;
-  }
-
-  /* ---- HERO ---- */
+  /* --- HERO --- */
   #hero { padding-top: 100px; }
 
-  /* ---- SECTIONS ---- */
+  /* --- SECTIONS --- */
   section { padding: 3.5rem 1rem; }
   section h2 { font-size: 2.2rem; }
 
-  /* ---- GRID ---- */
+  /* --- GRID: single column --- */
   .games-grid { grid-template-columns: 1fr; }
 
-  /* ---- FLIP CARDS ----
-     3D CSS flip with auto-height is unreliable on mobile.
-     Switch to a tap-to-reveal approach instead.           */
+  /* --- FLIP CARDS ---
+     3D CSS flip breaks at auto height on mobile.
+     Replace with tap-to-reveal: front stays, back
+     appears below it when .flipped is added.       */
   .flip-card {
     height: auto !important;
-    min-height: 0;
     perspective: none;
   }
-
   .flip-inner {
     position: static;
     transform: none !important;
     transition: none;
     transform-style: flat;
   }
-
   .flip-front,
   .flip-back {
     position: static;
@@ -552,42 +536,39 @@ footer {
     width: 100%;
     height: auto;
   }
-
   .flip-back {
     display: none;
     border-top: 1px solid var(--accent);
     border-radius: 0 0 6px 6px;
     overflow-y: visible;
   }
-
-  .flip-front { border-radius: 6px; }
-
+  .flip-front {
+    border-radius: 6px;
+  }
   .flip-card.flipped .flip-front {
     border-radius: 6px 6px 0 0;
     border-bottom-color: transparent;
   }
+  .flip-card.flipped .flip-back {
+    display: flex;
+  }
 
-  .flip-card.flipped .flip-back { display: flex; }
-
-  /* "tap" label replaces "click" */
-  .flip-hint { visibility: hidden; position: relative; }
+  /* Change "click" hint to "tap" */
+  .flip-hint { font-size: 0; }
   .flip-hint::after {
     content: 'tap to learn more →';
-    visibility: visible;
-    position: absolute;
-    left: 0;
     font-size: 0.65rem;
     letter-spacing: 0.06em;
     text-transform: uppercase;
     color: var(--muted);
   }
 
-  /* ---- TIMELINE ---- */
-  .tl-age   { min-width: 36px; font-size: 0.72rem; }
-  .tl-card  { padding: 0.7rem; gap: 0.4rem; }
-  .tl-icon  { font-size: 1.1rem; }
+  /* --- TIMELINE --- */
+  .tl-age  { min-width: 36px; font-size: 0.72rem; }
+  .tl-card { padding: 0.7rem; gap: 0.4rem; }
+  .tl-icon { font-size: 1.1rem; }
 
-  /* ---- CONTACT ---- */
+  /* --- CONTACT --- */
   .contact-links { flex-direction: column; }
   .contact-links .btn {
     text-align: center;
@@ -596,9 +577,9 @@ footer {
     padding: 0.6rem 1rem;
   }
 
-  /* ---- DEVLOG ---- */
-  .devlog-stats   { gap: 1rem; }
-  .devlog-header  { padding-top: 90px; }
+  /* --- DEVLOG --- */
+  .devlog-stats  { gap: 1rem; }
+  .devlog-header { padding-top: 90px; }
 }
 
 

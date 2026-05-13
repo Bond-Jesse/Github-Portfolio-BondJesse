@@ -14,35 +14,40 @@
   <nav>
     <div class="logo">JESSE</div>
     <div class="nav-links">
-      <a href="#about">About</a>
-      <a href="#games">Games</a>
-      <a href="#more">More projects</a>
-      <a href="#school">school</a>
-      <a href="#contact">Contact</a>
+      <a href="#about"  data-i18n="nav_about">About</a>
+      <a href="#games"  data-i18n="nav_games">Games</a>
+      <a href="#more"   data-i18n="nav_more">More projects</a>
+      <a href="#school" data-i18n="nav_school">School</a>
+      <a href="#contact" data-i18n="nav_contact">Contact</a>
+
+      <!-- Language switcher -->
+      <button class="lang-btn" id="lang-toggle" aria-label="Switch language">
+        <span class="lang-label">EN</span>
+      </button>
     </div>
   </nav>
 
   <!-- ========== HERO ========== -->
   <section id="hero">
-    <p class="hero-label">Game Developer · UE5 · 16 years old</p>
-    <h1>Hi, I'm Jesse.<br/>I make games.</h1>
-    <p class="hero-sub">
+    <p class="hero-label" data-i18n="hero_label">Game Developer · UE5 · 16 years old</p>
+    <h1 data-i18n="hero_h1">Hi, I'm Jesse.<br/>I make games.</h1>
+    <p class="hero-sub" data-i18n="hero_sub">
       Been building games since I was 8. Got serious at 14.<br/>
       Currently working towards my first release.
     </p>
-    <a href="#games" class="btn">See My Games ↓</a>
+    <a href="#games" class="btn" data-i18n="hero_cta">See My Games ↓</a>
   </section>
 
   <!-- ========== ABOUT ========== -->
   <section id="about">
-    <h2>About Me</h2>
-    <p>
+    <h2 data-i18n="about_title">About Me</h2>
+    <p data-i18n="about_p1">
       I'm a 16 year old game developer from Belgium. I started messing around with
       games when I was 8, and by the time I was 14 I decided to take it seriously.
       I build in <strong>Unreal Engine 5</strong> using the Blueprint system,
       and I also know basic <strong>Python</strong>.
     </p>
-    <p>
+    <p data-i18n="about_p2">
       I've built 5 games so far, none released yet, but I'm aiming to ship my
       first one in the next year or two. Every project teaches me something new.
     </p>
@@ -57,10 +62,93 @@
     </div>
   </section>
 
+  <!-- ========== TIMELINE ========== -->
+  <section id="timeline">
+    <h2 data-i18n="timeline_title">My Journey</h2>
+    <p class="section-sub" data-i18n="timeline_sub">From first click to current project — every build taught me something.</p>
+
+    <div class="timeline">
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-age">8</div>
+        <div class="tl-card">
+          <div class="tl-icon">🧟</div>
+          <div class="tl-body">
+            <h3 data-i18n="tl1_title">Zombie Shooter</h3>
+            <p data-i18n="tl1_desc">My very first game. Used tutorials to figure out UE5 basics — combat mechanics and enemy AI. Files sadly lost.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-age">10</div>
+        <div class="tl-card">
+          <div class="tl-icon">🏎️</div>
+          <div class="tl-body">
+            <h3 data-i18n="tl2_title">Racing Game</h3>
+            <p data-i18n="tl2_desc">Used the UE5 vehicle sample to explore level design and map layout. First time making something that felt alive. Also lost.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item tl-milestone">
+        <div class="tl-dot"></div>
+        <div class="tl-age">14</div>
+        <div class="tl-card">
+          <div class="tl-icon">💼</div>
+          <div class="tl-body">
+            <h3 data-i18n="tl3_title">Job Runner <span class="tl-badge" data-i18n="tl_milestone">Turning point</span></h3>
+            <p data-i18n="tl3_desc">This is where I got serious. Learned UI design, sound effects, game balance, and visual effects. Shifted focus to Escape the Box.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-age">14–15</div>
+        <div class="tl-card">
+          <div class="tl-icon">🏃</div>
+          <div class="tl-body">
+            <h3 data-i18n="tl4_title">Endless Runner</h3>
+            <p data-i18n="tl4_desc">Built from scratch to push through a coding wall. Deep dive into Blueprints and game loops. Files got corrupted.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-age">15–16</div>
+        <div class="tl-card">
+          <div class="tl-icon">🚗</div>
+          <div class="tl-body">
+            <h3 data-i18n="tl5_title">H2 RC Grand Prix</h3>
+            <p data-i18n="tl5_desc">Built and raced a hydrogen-powered RC car at school competition. Finished 7th, won most efficient driving — 30 laps on one hydrogen cell.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item tl-active">
+        <div class="tl-dot"></div>
+        <div class="tl-age" data-i18n="tl_now">15-now</div>
+        <div class="tl-card">
+          <div class="tl-icon">📦</div>
+          <div class="tl-body">
+            <h3 data-i18n="tl6_title">Escape the Box <span class="wip" data-i18n="tl_wip">In Progress</span></h3>
+            <p data-i18n="tl6_desc">My current project. Zero tutorials — only my own knowledge and written sources. Documenting the journey on YouTube with 3 devlogs posted.</p>
+            <a href="devlog.html" class="btn small" style="margin-top:0.6rem" data-i18n="tl6_cta">▶ Watch devlog</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
   <!-- ========== GAMES ========== -->
   <section id="games">
-    <h2>My Games</h2>
-    <p class="section-sub">All built in UE5. None released yet — but they're coming. <strong style="color:var(--accent)">Click a card</strong> to learn more.</p>
+    <h2 data-i18n="games_title">My Games</h2>
+    <p class="section-sub" data-i18n="games_sub">All built in UE5. None released yet — but they're coming. <strong style="color:var(--accent)" data-i18n="click_hint">Click a card</strong> to learn more.</p>
 
     <div class="games-grid">
 
@@ -70,16 +158,16 @@
           <div class="flip-front">
             <div class="game-icon">🧟</div>
             <div class="game-body">
-              <h3>Zombie Shooter</h3>
-              <p>Fight off waves of zombies. Built to practice combat mechanics and enemy AI in UE5.</p>
+              <h3 data-i18n="g1_title">Zombie Shooter</h3>
+              <p data-i18n="g1_short">Fight off waves of zombies. Built to practice combat mechanics and enemy AI in UE5.</p>
             </div>
-            <span class="flip-hint">click to learn more →</span>
+            <span class="flip-hint" data-i18n="flip_hint">click to learn more →</span>
           </div>
           <div class="flip-back">
-            <h3>🧟 Zombie Shooter</h3>
-            <p>One of my first projects, started at age 9 with the help of tutorials.</p>
-            <p>It wasn't the greatest game, but it was a fun introduction to game development and got me hooked on building things in UE5.</p>
-            <p>Sadly, I can no longer find the files.</p>
+            <h3>🧟 <span data-i18n="g1_title">Zombie Shooter</span></h3>
+            <p data-i18n="g1_long1">One of my first projects, started at age 9 with the help of tutorials.</p>
+            <p data-i18n="g1_long2">It wasn't the greatest game, but it was a fun introduction to game development and got me hooked on building things in UE5.</p>
+            <p data-i18n="g1_long3">Sadly, I can no longer find the files.</p>
           </div>
         </div>
       </div>
@@ -90,16 +178,16 @@
           <div class="flip-front">
             <div class="game-icon">🏎️</div>
             <div class="game-body">
-              <h3>Racing Game</h3>
-              <p>A basic racing game. My first time working with vehicle physics and track design.</p>
+              <h3 data-i18n="g2_title">Racing Game</h3>
+              <p data-i18n="g2_short">A basic racing game. My first time working with vehicle physics and track design.</p>
             </div>
-            <span class="flip-hint">click to learn more →</span>
+            <span class="flip-hint" data-i18n="flip_hint">click to learn more →</span>
           </div>
           <div class="flip-back">
-            <h3>🏎️ Racing Game</h3>
-            <p>A fun project where I really leaned into level design and tried to make something feel alive. (Age 10)</p>
-            <p>I used the basic car sample in UE5 and focused heavily on the layout of the map.</p>
-            <p>Sadly, these files are also lost.</p>
+            <h3>🏎️ <span data-i18n="g2_title">Racing Game</span></h3>
+            <p data-i18n="g2_long1">A fun project where I really leaned into level design and tried to make something feel alive. (Age 10)</p>
+            <p data-i18n="g2_long2">I used the basic car sample in UE5 and focused heavily on the layout of the map.</p>
+            <p data-i18n="g2_long3">Sadly, these files are also lost.</p>
           </div>
         </div>
       </div>
@@ -110,16 +198,16 @@
           <div class="flip-front">
             <div class="game-icon">💼</div>
             <div class="game-body">
-              <h3>Job Runner</h3>
-              <p>A job simulator. Still unfinished — I moved my priorities to Escape The Box.</p>
+              <h3 data-i18n="g3_title">Job Runner</h3>
+              <p data-i18n="g3_short">A job simulator. Still unfinished — I moved my priorities to Escape The Box.</p>
             </div>
-            <span class="flip-hint">click to learn more →</span>
+            <span class="flip-hint" data-i18n="flip_hint">click to learn more →</span>
           </div>
           <div class="flip-back">
-            <h3>💼 Job Runner</h3>
-            <p>Started around age 14. This was a serious project and a really important one for me.</p>
-            <p>I learned UI design, sound effects, game balance, visual effects, and much more.</p>
-            <p>This was definitely the project that made me take game development seriously.</p>
+            <h3>💼 <span data-i18n="g3_title">Job Runner</span></h3>
+            <p data-i18n="g3_long1">Started around age 14. This was a serious project and a really important one for me.</p>
+            <p data-i18n="g3_long2">I learned UI design, sound effects, game balance, visual effects, and much more.</p>
+            <p data-i18n="g3_long3">This was definitely the project that made me take game development seriously.</p>
           </div>
         </div>
       </div>
@@ -130,15 +218,15 @@
           <div class="flip-front">
             <div class="game-icon">🏃</div>
             <div class="game-body">
-              <h3>Endless Runner</h3>
-              <p>Classic endless runner. Built to learn basic blueprints and game loops.</p>
+              <h3 data-i18n="g4_title">Endless Runner</h3>
+              <p data-i18n="g4_short">Classic endless runner. Built to learn basic blueprints and game loops.</p>
             </div>
-            <span class="flip-hint">click to learn more →</span>
+            <span class="flip-hint" data-i18n="flip_hint">click to learn more →</span>
           </div>
           <div class="flip-back">
-            <h3>🏃 Endless Runner</h3>
-            <p>Started right after hitting a coding wall in my previous game. I needed to really learn how to code, so I built this from scratch. (Age 14–15)</p>
-            <p>It was a fun project, but sadly the files got corrupted and couldn't be recovered.</p>
+            <h3>🏃 <span data-i18n="g4_title">Endless Runner</span></h3>
+            <p data-i18n="g4_long1">Started right after hitting a coding wall in my previous game. I needed to really learn how to code, so I built this from scratch. (Age 14–15)</p>
+            <p data-i18n="g4_long2">It was a fun project, but sadly the files got corrupted and couldn't be recovered.</p>
           </div>
         </div>
       </div>
@@ -149,18 +237,18 @@
           <div class="flip-front">
             <div class="game-icon">📦</div>
             <div class="game-body">
-              <h3>Escape the Box <span class="wip">In Progress</span></h3>
-              <p>A puzzle-parkour game where you escape a box. Mix of brain teasers and movement mechanics.</p>
-              <a href="devlog.html" class="btn small" onclick="event.stopPropagation()">▶ Watch progress</a>
+              <h3 data-i18n="g5_title">Escape the Box <span class="wip" data-i18n="tl_wip">In Progress</span></h3>
+              <p data-i18n="g5_short">A puzzle-parkour game where you escape a box. Mix of brain teasers and movement mechanics.</p>
+              <a href="devlog.html" class="btn small" onclick="event.stopPropagation()" data-i18n="tl6_cta">▶ Watch progress</a>
             </div>
-            <span class="flip-hint">click to learn more →</span>
+            <span class="flip-hint" data-i18n="flip_hint">click to learn more →</span>
           </div>
           <div class="flip-back">
-            <h3>📦 Escape the Box</h3>
-            <p>My current project, started at 15. I challenged myself to use zero tutorials — only my own knowledge and sources like Google, Reddit, and GitHub.</p>
-            <p>I also decided to document the journey, so I created a YouTube channel and have posted one devlog so far, with a second on the way.</p>
-            <p>Still actively working on this one.</p>
-            <a href="devlog.html" class="btn small" onclick="event.stopPropagation()" style="margin-top:auto">▶ Watch devlog</a>
+            <h3>📦 <span data-i18n="g5_title_short">Escape the Box</span></h3>
+            <p data-i18n="g5_long1">My current project, started at 15. I challenged myself to use zero tutorials — only my own knowledge and sources like Google, Reddit, and GitHub.</p>
+            <p data-i18n="g5_long2">I also decided to document the journey, so I created a YouTube channel and have posted multiple devlogs so far.</p>
+            <p data-i18n="g5_long3">Still actively working on this one.</p>
+            <a href="devlog.html" class="btn small" onclick="event.stopPropagation()" style="margin-top:auto" data-i18n="tl6_cta">▶ Watch devlog</a>
           </div>
         </div>
       </div>
@@ -170,8 +258,8 @@
 
   <!-- ========== MORE PROJECTS ========== -->
   <section id="more">
-    <h2>more projects</h2>
-    <p class="section-sub">I didn't only make games — I also built <strong>multiple physical</strong> projects. <strong style="color:var(--accent)">Click a card</strong> to learn more.</p>
+    <h2 data-i18n="more_title">More projects</h2>
+    <p class="section-sub" data-i18n="more_sub">I didn't only make games — I also built <strong>multiple physical</strong> projects. <strong style="color:var(--accent)" data-i18n="click_hint">Click a card</strong> to learn more.</p>
 
     <div class="games-grid">
 
@@ -181,21 +269,21 @@
           <div class="flip-front">
             <div class="game-icon">🚗</div>
             <div class="game-body">
-              <h3>H2 RC Grand Prix</h3>
-              <p>Built and raced a hydrogen-powered RC car. Finished 7th and won most efficient driving — 30 laps on one hydrogen cell.</p>
+              <h3 data-i18n="h2_title">H2 RC Grand Prix</h3>
+              <p data-i18n="h2_short">Built and raced a hydrogen-powered RC car. Finished 7th and won most efficient driving — 30 laps on one hydrogen cell.</p>
               <div style="display:flex;gap:0.5rem;flex-wrap:wrap">
-                <a href="https://www.youtube.com/live/xzpAVZTHd-0" target="_blank" class="btn small" onclick="event.stopPropagation()">▶ Race pt1</a>
-                <a href="https://www.youtube.com/live/OE5Fio9vvCQ" target="_blank" class="btn small" onclick="event.stopPropagation()">▶ Race pt2</a>
+                <a href="https://www.youtube.com/live/xzpAVZTHd-0" target="_blank" class="btn small" onclick="event.stopPropagation()" data-i18n="race_pt1">▶ Race pt1</a>
+                <a href="https://www.youtube.com/live/OE5Fio9vvCQ" target="_blank" class="btn small" onclick="event.stopPropagation()" data-i18n="race_pt2">▶ Race pt2</a>
               </div>
             </div>
-            <span class="flip-hint">click to learn more →</span>
+            <span class="flip-hint" data-i18n="flip_hint">click to learn more →</span>
           </div>
           <div class="flip-back">
-            <h3>🚗 H2 RC Grand Prix</h3>
-            <p>We were provided with basic materials including HydroSticks and had to build a functional vehicle under strict constraints.</p>
-            <p>I took initiative across multiple areas due to limited team leadership — coordinating tasks, doing 3D and body design, and handling electronics.</p>
-            <p>One of our key innovations was a custom shock absorption system to protect the CPU during rear impacts.</p>
-            <p>I developed practical skills in mechanics, leadership, task planning, and team coordination.</p>
+            <h3>🚗 <span data-i18n="h2_title">H2 RC Grand Prix</span></h3>
+            <p data-i18n="h2_long1">We were provided with basic materials including HydroSticks and had to build a functional vehicle under strict constraints.</p>
+            <p data-i18n="h2_long2">I took initiative across multiple areas due to limited team leadership — coordinating tasks, doing 3D and body design, and handling electronics.</p>
+            <p data-i18n="h2_long3">One of our key innovations was a custom shock absorption system to protect the CPU during rear impacts.</p>
+            <p data-i18n="h2_long4">I developed practical skills in mechanics, leadership, task planning, and team coordination.</p>
           </div>
         </div>
       </div>
@@ -205,23 +293,23 @@
 
   <!-- ========== SCHOOL ========== -->
   <section id="school">
-    <h2>School</h2>
+    <h2 data-i18n="school_title">School</h2>
 
     <div class="games-grid">
       <div class="game-card">
         <div class="game-icon">💼</div>
         <div class="game-body">
-          <h3>Middle school</h3>
-          <p>1st year: STEM · 2nd year: STEM sciences</p>
-          <a href="#middle-school" class="btn">See my middle school projects ↓</a>
+          <h3 data-i18n="ms_title">Middle school</h3>
+          <p data-i18n="ms_years">1st year: STEM · 2nd year: STEM sciences</p>
+          <a href="#middle-school" class="btn" data-i18n="ms_cta">See my middle school projects ↓</a>
         </div>
       </div>
       <div class="game-card">
         <div class="game-icon">💼</div>
         <div class="game-body">
-          <h3>High school</h3>
-          <p>1st and 2nd year: technological sciences</p>
-          <a href="#high-school" class="btn">See my high school projects ↓</a>
+          <h3 data-i18n="hs_title">High school</h3>
+          <p data-i18n="hs_years">1st and 2nd year: technological sciences</p>
+          <a href="#high-school" class="btn" data-i18n="hs_cta">See my high school projects ↓</a>
         </div>
       </div>
     </div>
@@ -229,8 +317,8 @@
 
   <!-- ========== MIDDLE SCHOOL PROJECTS ========== -->
   <section id="middle-school">
-    <h2>Middle school projects</h2>
-    <p class="section-sub"><strong style="color:var(--accent)">Click a card</strong> to learn more.</p>
+    <h2 data-i18n="ms_proj_title">Middle school projects</h2>
+    <p class="section-sub"><strong style="color:var(--accent)" data-i18n="click_hint">Click a card</strong> to learn more.</p>
 
     <div class="games-grid">
 
@@ -240,15 +328,15 @@
           <div class="flip-front">
             <div class="game-icon">🥚</div>
             <div class="game-body">
-              <h3>Egg crash challenge</h3>
-              <p>Built a car that could make an egg survive a crash from a ramp.</p>
+              <h3 data-i18n="egg_title">Egg crash challenge</h3>
+              <p data-i18n="egg_short">Built a car that could make an egg survive a crash from a ramp.</p>
             </div>
-            <span class="flip-hint">click to learn more →</span>
+            <span class="flip-hint" data-i18n="flip_hint">click to learn more →</span>
           </div>
           <div class="flip-back">
-            <h3>🥚 Egg crash challenge</h3>
-            <p>We had to build a small wooden car entirely from our own imagination.</p>
-            <p>I surrounded the car with sponges to absorb impact, and designed a cushioned compartment for the egg connected only by rubber bands — so it could move forward and backward and wouldn't stop abruptly.</p>
+            <h3>🥚 <span data-i18n="egg_title">Egg crash challenge</span></h3>
+            <p data-i18n="egg_long1">We had to build a small wooden car entirely from our own imagination.</p>
+            <p data-i18n="egg_long2">I surrounded the car with sponges to absorb impact, and designed a cushioned compartment for the egg connected only by rubber bands — so it could move forward and backward and wouldn't stop abruptly.</p>
           </div>
         </div>
       </div>
@@ -259,16 +347,16 @@
           <div class="flip-front">
             <div class="game-icon">🌉</div>
             <div class="game-body">
-              <h3>Bridge</h3>
-              <p>Built a bridge out of small wooden sticks and tape. Target: hold 3–5 kg.</p>
+              <h3 data-i18n="bridge_title">Bridge</h3>
+              <p data-i18n="bridge_short">Built a bridge out of small wooden sticks and tape. Target: hold 3–5 kg.</p>
             </div>
-            <span class="flip-hint">click to learn more →</span>
+            <span class="flip-hint" data-i18n="flip_hint">click to learn more →</span>
           </div>
           <div class="flip-back">
-            <h3>🌉 Bridge</h3>
-            <p>Built in a group of 3 with only 4 hours of work time per week over 2 weeks.</p>
-            <p>We researched different bridge designs, then went with an interlocked stick design reinforced with tape.</p>
-            <p>On test day our bridge was dropped on the way to the test — it still held 3.5 kg and we scored around 60%.</p>
+            <h3>🌉 <span data-i18n="bridge_title">Bridge</span></h3>
+            <p data-i18n="bridge_long1">Built in a group of 3 with only 4 hours of work time per week over 2 weeks.</p>
+            <p data-i18n="bridge_long2">We researched different bridge designs, then went with an interlocked stick design reinforced with tape.</p>
+            <p data-i18n="bridge_long3">On test day our bridge was dropped on the way to the test — it still held 3.5 kg and we scored around 60%.</p>
           </div>
         </div>
       </div>
@@ -279,16 +367,16 @@
           <div class="flip-front">
             <div class="game-icon">🕷️</div>
             <div class="game-body">
-              <h3>Spider robot</h3>
-              <p>Built a vibrating spider that steers away from obstacles using wire feelers.</p>
+              <h3 data-i18n="spider_title">Spider robot</h3>
+              <p data-i18n="spider_short">Built a vibrating spider that steers away from obstacles using wire feelers.</p>
             </div>
-            <span class="flip-hint">click to learn more →</span>
+            <span class="flip-hint" data-i18n="flip_hint">click to learn more →</span>
           </div>
           <div class="flip-back">
-            <h3>🕷️ Spider robot</h3>
-            <p>Wire feelers acted as whiskers — when one bent on contact with an object, the spider turned in the opposite direction.</p>
-            <p>Components: a battery, a small vibration motor, wires, and button-style switches with long handles for the whiskers.</p>
-            <p>My first real hands-on experience with basic electronics.</p>
+            <h3>🕷️ <span data-i18n="spider_title">Spider robot</span></h3>
+            <p data-i18n="spider_long1">Wire feelers acted as whiskers — when one bent on contact with an object, the spider turned in the opposite direction.</p>
+            <p data-i18n="spider_long2">Components: a battery, a small vibration motor, wires, and button-style switches with long handles for the whiskers.</p>
+            <p data-i18n="spider_long3">My first real hands-on experience with basic electronics.</p>
           </div>
         </div>
       </div>
@@ -298,7 +386,7 @@
 
   <!-- ========== HIGH SCHOOL PROJECTS ========== -->
   <section id="high-school">
-    <h2>High school projects</h2>
+    <h2 data-i18n="hs_proj_title">High school projects</h2>
 
     <div class="games-grid">
       <div class="flip-card">
@@ -306,17 +394,17 @@
           <div class="flip-front">
             <div class="game-icon">🚗</div>
             <div class="game-body">
-              <h3>Hydro RC car</h3>
-              <p>Built and raced a hydrogen-powered RC car against other schools in 2nd year.</p>
-              <a href="#more" class="btn small" onclick="event.stopPropagation()">See full story</a>
+              <h3 data-i18n="h2_title">Hydro RC car</h3>
+              <p data-i18n="hrc_short">Built and raced a hydrogen-powered RC car against other schools in 2nd year.</p>
+              <a href="#more" class="btn small" onclick="event.stopPropagation()" data-i18n="full_story">See full story</a>
             </div>
-            <span class="flip-hint">click to learn more →</span>
+            <span class="flip-hint" data-i18n="flip_hint">click to learn more →</span>
           </div>
           <div class="flip-back">
-            <h3>🚗 Hydro RC car</h3>
-            <p>In 2nd year of high school we had to build a hydrogen-powered RC car and race other schools.</p>
-            <p>We finished 7th overall and won the award for most efficient driving — 30 laps on a single hydrogen cell.</p>
-            <p>I handled 3D design, body design, electronics, and drove in the race.</p>
+            <h3>🚗 <span data-i18n="h2_title">Hydro RC car</span></h3>
+            <p data-i18n="hrc_long1">In 2nd year of high school we had to build a hydrogen-powered RC car and race other schools.</p>
+            <p data-i18n="hrc_long2">We finished 7th overall and won the award for most efficient driving — 30 laps on a single hydrogen cell.</p>
+            <p data-i18n="hrc_long3">I handled 3D design, body design, electronics, and drove in the race.</p>
           </div>
         </div>
       </div>
@@ -325,8 +413,8 @@
 
   <!-- ========== CONTACT ========== -->
   <section id="contact">
-    <h2>Get In Touch</h2>
-    <p>Want to follow my progress, collaborate, or just talk games? Reach out below.</p>
+    <h2 data-i18n="contact_title">Get In Touch</h2>
+    <p data-i18n="contact_p">Want to follow my progress, collaborate, or just talk games? Reach out below.</p>
     <div class="contact-links">
       <a href="mailto:bond.10palmboom@gmail.com" class="btn">📧 bond.10palmboom@gmail.com</a>
       <a href="https://github.com/Bond-Jesse" target="_blank" class="btn outline">🐙 GitHub</a>
@@ -335,7 +423,7 @@
 
   <!-- ========== FOOTER ========== -->
   <footer>
-    <p>© 2026 Jesse · Made with HTML, CSS, JS · 70% Human 30% AI</p>
+    <p>© 2026 Jesse · Made with HTML, CSS, JS · 60% Human 40% AI</p>
   </footer>
 
   <script src="function.JS"></script>

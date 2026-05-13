@@ -13,17 +13,21 @@
   <!-- ========== NAVBAR ========== -->
   <nav>
     <div class="logo">JESSE</div>
+    <div class="nav-right" style="display:flex;align-items:center;gap:0.5rem">
+      <!-- Hamburger — JS makes it visible only on mobile -->
+      <button class="hamburger" id="hamburger" aria-label="Open menu" style="display:none">
+        <span></span><span></span><span></span>
+      </button>
+      <button class="lang-btn" id="lang-toggle" aria-label="Switch language">
+        <span class="lang-label">EN</span>
+      </button>
+    </div>
     <div class="nav-links">
       <a href="#about"  data-i18n="nav_about">About</a>
       <a href="#games"  data-i18n="nav_games">Games</a>
       <a href="#more"   data-i18n="nav_more">More projects</a>
       <a href="#school" data-i18n="nav_school">School</a>
       <a href="#contact" data-i18n="nav_contact">Contact</a>
-
-      <!-- Language switcher -->
-      <button class="lang-btn" id="lang-toggle" aria-label="Switch language">
-        <span class="lang-label">EN</span>
-      </button>
     </div>
   </nav>
 

@@ -37,6 +37,24 @@ nav {
   backdrop-filter: blur(8px); /* frosted glass effect */
 }
 
+/* On desktop the lang button lives inside .nav-right,
+   which sits between the logo and the nav links.
+   We push the links to the right with margin-left: auto. */
+.nav-right {
+  order: 3; /* lang + hamburger always on the right */
+}
+
+.nav-links {
+  order: 2;
+  display: flex;
+  gap: 0.5rem;
+  margin-left: auto;
+  margin-right: 0.5rem;
+}
+
+/* Hamburger is always hidden on desktop */
+.hamburger { display: none !important; }
+
 .logo {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 1.5rem;
@@ -432,11 +450,155 @@ footer {
 }
 
 /* =============================================
-   MOBILE (screens smaller than 600px)
+   MOBILE — full responsive overhaul
    ============================================= */
 @media (max-width: 600px) {
-  .nav-links a { font-size: 0.75rem; padding: 0.35rem 0.7rem; }
-  .games-grid  { grid-template-columns: 1fr; } /* single column on mobile */
+
+  /* ---- NAVBAR ---- */
+  nav {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 0.6rem 1rem;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  /* Override the desktop hamburger:none rule */
+  .hamburger { display: flex !important; }
+
+  /* nav-right stays on the right beside the logo */
+  .nav-right { order: 2; margin-left: auto; }
+
+  /* Link list drops below logo + nav-right row */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    gap: 0.4rem;
+    padding-bottom: 0.5rem;
+    order: 3;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .nav-links.open { display: flex; }
+
+  .nav-links a {
+    font-size: 0.85rem;
+    padding: 0.5rem 0.9rem;
+    width: 100%;
+    text-align: left;
+  }
+
+  .lang-btn {
+    font-size: 0.85rem;
+    padding: 0.35rem 0.7rem;
+  }
+
+  /* Hamburger — only exists on mobile via JS injection */
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 34px;
+    height: 34px;
+    background: none;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 6px;
+    flex-shrink: 0;
+  }
+  .hamburger span {
+    display: block;
+    height: 2px;
+    background: var(--text);
+    border-radius: 2px;
+    transition: 0.2s;
+  }
+
+  /* ---- HERO ---- */
+  #hero { padding-top: 100px; }
+
+  /* ---- SECTIONS ---- */
+  section { padding: 3.5rem 1rem; }
+  section h2 { font-size: 2.2rem; }
+
+  /* ---- GRID ---- */
+  .games-grid { grid-template-columns: 1fr; }
+
+  /* ---- FLIP CARDS ----
+     3D CSS flip with auto-height is unreliable on mobile.
+     Switch to a tap-to-reveal approach instead.           */
+  .flip-card {
+    height: auto !important;
+    min-height: 0;
+    perspective: none;
+  }
+
+  .flip-inner {
+    position: static;
+    transform: none !important;
+    transition: none;
+    transform-style: flat;
+  }
+
+  .flip-front,
+  .flip-back {
+    position: static;
+    transform: none;
+    backface-visibility: visible;
+    width: 100%;
+    height: auto;
+  }
+
+  .flip-back {
+    display: none;
+    border-top: 1px solid var(--accent);
+    border-radius: 0 0 6px 6px;
+    overflow-y: visible;
+  }
+
+  .flip-front { border-radius: 6px; }
+
+  .flip-card.flipped .flip-front {
+    border-radius: 6px 6px 0 0;
+    border-bottom-color: transparent;
+  }
+
+  .flip-card.flipped .flip-back { display: flex; }
+
+  /* "tap" label replaces "click" */
+  .flip-hint { visibility: hidden; position: relative; }
+  .flip-hint::after {
+    content: 'tap to learn more →';
+    visibility: visible;
+    position: absolute;
+    left: 0;
+    font-size: 0.65rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* ---- TIMELINE ---- */
+  .tl-age   { min-width: 36px; font-size: 0.72rem; }
+  .tl-card  { padding: 0.7rem; gap: 0.4rem; }
+  .tl-icon  { font-size: 1.1rem; }
+
+  /* ---- CONTACT ---- */
+  .contact-links { flex-direction: column; }
+  .contact-links .btn {
+    text-align: center;
+    word-break: break-all;
+    font-size: 0.8rem;
+    padding: 0.6rem 1rem;
+  }
+
+  /* ---- DEVLOG ---- */
+  .devlog-stats   { gap: 1rem; }
+  .devlog-header  { padding-top: 90px; }
 }
 
 

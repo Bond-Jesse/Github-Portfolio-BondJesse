@@ -126,6 +126,59 @@ document.querySelectorAll('.flip-card').forEach(card => {
 
 
 // =============================================
+// MOBILE HAMBURGER MENU
+// Only activates on screens <= 600px
+// =============================================
+
+function isMobile() { return window.innerWidth <= 600; }
+
+const hamburger = document.getElementById('hamburger');
+const navLinksEl = document.querySelector('.nav-links');
+
+// Show the hamburger button only on mobile
+function updateHamburgerVisibility() {
+  if (!hamburger) return;
+  hamburger.style.display = isMobile() ? 'flex' : 'none';
+  // On desktop always show the nav links in their original row layout
+  if (!isMobile()) {
+    navLinksEl.classList.remove('open');
+  }
+}
+updateHamburgerVisibility();
+window.addEventListener('resize', updateHamburgerVisibility);
+
+if (hamburger) {
+  hamburger.addEventListener('click', (e) => {
+    e.stopPropagation();
+    navLinksEl.classList.toggle('open');
+  });
+}
+
+// Close menu when a nav link is tapped on mobile
+if (navLinksEl) {
+  navLinksEl.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      if (isMobile()) navLinksEl.classList.remove('open');
+    });
+  });
+}
+
+// Close menu when tapping elsewhere
+document.addEventListener('click', (e) => {
+  if (isMobile() && navLinksEl && !navLinksEl.contains(e.target) && e.target !== hamburger) {
+    navLinksEl.classList.remove('open');
+  }
+});
+
+// =============================================
+// MOBILE CARD FLIP — tap-to-reveal
+// On mobile the CSS 3D flip is replaced by a
+// simple show/hide toggled by the .flipped class.
+// The existing flip JS still sets .flipped — the
+// CSS media query does the rest. No extra JS needed.
+// =============================================
+
+// =============================================
 // LANGUAGE SWITCHER — EN / NL
 // Syncs across tabs using localStorage + StorageEvent
 // =============================================

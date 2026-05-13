@@ -127,30 +127,57 @@ document.querySelectorAll('.flip-card').forEach(card => {
 
 // =============================================
 // MOBILE HAMBURGER MENU
-// Shows/hides the nav links on small screens
+// Controlled entirely via JS style.display so
+// the desktop CSS flex rule can't interfere.
 // =============================================
 
 const hamburger = document.getElementById('hamburger');
 const navLinksEl = document.querySelector('.nav-links');
 
+function isMobile() { return window.innerWidth <= 600; }
+
+function setNavForScreenSize() {
+  if (!navLinksEl) return;
+  if (isMobile()) {
+    // On mobile: hide by default (hamburger controls it)
+    hamburger && (hamburger.style.display = 'flex');
+    navLinksEl.style.display = 'none';
+    navLinksEl.style.flexDirection = 'column';
+    navLinksEl.style.width = '100%';
+  } else {
+    // On desktop: always show as a row, hide hamburger
+    hamburger && (hamburger.style.display = 'none');
+    navLinksEl.style.display = 'flex';
+    navLinksEl.style.flexDirection = 'row';
+    navLinksEl.style.width = '';
+  }
+}
+
+// Run on load and whenever the window is resized
+setNavForScreenSize();
+window.addEventListener('resize', setNavForScreenSize);
+
 if (hamburger && navLinksEl) {
-  // Toggle menu open/closed when hamburger is tapped
   hamburger.addEventListener('click', (e) => {
     e.stopPropagation();
-    navLinksEl.classList.toggle('open');
+    const isOpen = navLinksEl.style.display === 'flex';
+    navLinksEl.style.display = isOpen ? 'none' : 'flex';
   });
 
-  // Close menu when any nav link is tapped
+  // Close when a link is tapped
   navLinksEl.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
-      navLinksEl.classList.remove('open');
+      if (isMobile()) navLinksEl.style.display = 'none';
     });
   });
 
-  // Close menu when tapping anywhere else on the page
+  // Close when tapping anywhere else
   document.addEventListener('click', (e) => {
-    if (!navLinksEl.contains(e.target) && e.target !== hamburger) {
-      navLinksEl.classList.remove('open');
+    if (isMobile() &&
+        !navLinksEl.contains(e.target) &&
+        e.target !== hamburger &&
+        !hamburger.contains(e.target)) {
+      navLinksEl.style.display = 'none';
     }
   });
 }
